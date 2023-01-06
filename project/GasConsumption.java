@@ -24,7 +24,7 @@ public class GasConsumption extends Consumption{
 	}
 	
 	public void calculateTotal() {
-		consumption = currentMonth - lastMonth;
+		consumption = getConsumption();
 		total = consumption * gasPrice;
 	}
 	public void calculateTax() {
@@ -32,7 +32,7 @@ public class GasConsumption extends Consumption{
 	}
 	public void showReceipt() {	
 		System.out.println("----------------");
-		System.out.println("Used Gas: " + getConsumption());
+		System.out.println("Used Gas: " + getConsumption() + " m^3");
 		System.out.println("Tax: " + tax + " $");
 		System.out.println("Total: " + (total + tax) + " $");
 		System.out.println("----------------");

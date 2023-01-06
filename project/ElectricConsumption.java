@@ -31,7 +31,7 @@ public class ElectricConsumption extends Consumption{
 	
 	public void calculateTotal() {
 		//Calculating kWh
-		watt = currentMonth - lastMonth;
+		watt = getConsumption();
 		consumption = (watt * hour) / 1000;
 		
 		//Checking the consumption if below 240 to define the price

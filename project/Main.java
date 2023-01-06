@@ -13,8 +13,7 @@ public class Main {
 
     do {
       m.showMenu();
-
-      //Write this try-catch to prevent wrong input from the user
+      //I wrote this try-catch to prevent wrong input from the user
       do {
         try {
           input = s.nextInt();
@@ -35,7 +34,7 @@ public class Main {
               consumption = s.nextDouble();
               System.out.println("Enter Fuel Type (Gas-AC: 1 - Diesel-DC: 2 - LPG-Fast: 3)");
               fuelType = s.nextInt();
-              //Write this to prevent wrong fuelType from user
+              //I wrote this to prevent getting wrong fuelType from user
               while(fuelType != 1 && fuelType != 2 && fuelType != 3) {
             	  System.out.println("Wrong fuel type.");
                   fuelType = s.nextInt();
@@ -70,8 +69,8 @@ public class Main {
         g.showReceipt();
         break;
       case 4:
-        VehicleICE ice = new VehicleICE();
-        ice.setConsumption(distanceTraveled, consumption, fuelType);
+        VehicleICE ice = new VehicleICE(distanceTraveled, consumption, fuelType);
+        //ice.setConsumption(distanceTraveled, consumption, fuelType);
         ice.calculateConsumption();
         ice.show();
         break;

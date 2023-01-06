@@ -27,7 +27,7 @@ public class WaterConsumption extends Consumption {
 	}
 	
 	public void calculateTotal() {
-		consumption = currentMonth - lastMonth;
+		consumption = getConsumption();
 		total = consumption * waterPrice;
 	}
 	public void calculateTax() {
@@ -38,7 +38,7 @@ public class WaterConsumption extends Consumption {
 	}
 	public void showReceipt() {	
 		System.out.println("----------------");
-		System.out.println("Used Water: " + getConsumption());
+		System.out.println("Used Water: " + getConsumption() + " m^3");
 		System.out.println("Tax: " + (tax + tax1) + " $");
 		System.out.println("Total: " + (total + tax + tax1) + " $");
 		System.out.println("----------------");
