@@ -7,7 +7,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner s = new Scanner(System. in );
     Menu m = new Menu();
-    double lastMonth = 0, currentMonth = 0, hour = 0, distanceTraveled = 0, consumption = 0;
+    double lastMonth = 0, currentMonth = 0, hour = 0, distanceTraveled = 0, consumption = 0, averageSpeed = 0;
     int fuelType = 0, input = 0;
     boolean isTrue = true;
 
@@ -22,6 +22,10 @@ public class Main {
         	  lastMonth = s.nextDouble();
         	  System.out.println("Enter current month's consumption: ");
         	  currentMonth = s.nextDouble();
+        	  while(currentMonth < lastMonth) {
+        		  System.out.println("Current month cannot be smaller than last month.");
+        		  currentMonth = s.nextDouble();
+        	  }
         	  if(input == 1)  {
         		  System.out.println("Enter current hour usage: ");
         		  hour = s.nextDouble();
@@ -32,6 +36,8 @@ public class Main {
               distanceTraveled = s.nextDouble();
               System.out.println("Enter Consumption: ");
               consumption = s.nextDouble();
+              System.out.println("Enter Average Speed: ");
+              averageSpeed = s.nextDouble();
               System.out.println("Enter Fuel Type (Gas-AC: 1 - Diesel-DC: 2 - LPG-Fast: 3)");
               fuelType = s.nextInt();
               //I wrote this to prevent getting wrong fuelType from user
@@ -73,6 +79,7 @@ public class Main {
         //ice.setConsumption(distanceTraveled, consumption, fuelType);
         ice.calculateConsumption();
         ice.show();
+        ice.TripComputer(distanceTraveled, consumption, averageSpeed);
         break;
       case 5:
         VehicleEV ev = new VehicleEV();
@@ -82,5 +89,6 @@ public class Main {
         break;
       }
     } while (input != 0);
+    s.close();
   }
 }
