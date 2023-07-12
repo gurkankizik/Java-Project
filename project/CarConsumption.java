@@ -31,7 +31,6 @@ public abstract class CarConsumption extends Menu {
 		consumedFuel = (distanceTraveled / 100 * consumption);
 		System.out.println("Consumed Fuel " + Math.round(consumedFuel*100.0)/100.0 + " l");
 		kmCost = price * consumption / 100;
-
 		System.out.println("Cost Per KM " + Math.round(kmCost*100.0)/100.0 + " $");
 		System.out.println("-------------------------------");
 	}
